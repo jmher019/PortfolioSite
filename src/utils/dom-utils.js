@@ -1,9 +1,22 @@
 var DomUtils = {
-  create: function (htmlTag, className, id) {
+  create: function (htmlTag, parent, className, id) {
     // create the html element, set the className if provided, and set the id if provided
     var element = document.createElement(htmlTag);
-    element.className = className ? className : '';
-    element.id = id ? id : '';
+
+    // Add element to parent as a child
+    if (parent) {
+      parent.appendChild(element);
+    }
+
+    // If className is defined and not an empty string, set it
+    if (className) {
+      element.className = className;
+    }
+
+    // If id is defined and not an empty string, set it
+    if (id) {
+      element.id = id;
+    }
 
     return element;
   },
@@ -15,7 +28,7 @@ var DomUtils = {
     // Check if the final array has a length greater than 0 (if true then the className is already present in the element)
     return element.className
       .split(' ')
-      .filter(function (str) { str === className; })
+      .filter(function (str) { return str === className; })
       .length > 0;
   },
 
@@ -25,6 +38,20 @@ var DomUtils = {
     if (!DomUtils.containsClassName(element, className)) {
       // ` ${className}` === ' ' + className
       element.className = element.className ? (element.className + ` ${className}`) : className;
+    }
+  },
+
+  removeClassName: function (element, className) {
+    // Check if the element has the class name
+    // If yes, remove it
+    if (!DomUtils.containsClassName(element, className)) {
+      // Split the element className by using spaces as the delimiter
+      // filter the resulting array of strings and make sure that we filter out any string equivalent to the className param
+      // Finally, use the final array's reduce function to combine the remaining strings back into a single string
+      element.className = element.className
+        .split(' ')
+        .filter(function (str) { return str !== className; })
+        .reduce(function (combinedString, elementInArray) { return combinedString.concat(` ${elementInArray}`); });
     }
   }
 };
