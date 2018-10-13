@@ -6,15 +6,27 @@
   border-radius: 10px;
   background-image: linear-gradient(#222, #444);
   box-shadow: 5px 10px 8px #888;
+  padding-top: 8px;
+}
+
+.nav-item-container {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .nav-item {
   box-sizing: border-box;
   width: 150px;
-  height: 100%;
-  padding-top: 8px;
-  color: white;
+  height: 20px;
+  color: #aaa;
   text-align: center;
-  border-right: 1px solid white;
-  border-top-right-radius: 5%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.nav-item:hover {
+  color: white;
+  cursor: pointer;
 }
