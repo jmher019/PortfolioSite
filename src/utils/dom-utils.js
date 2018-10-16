@@ -44,7 +44,7 @@ var DomUtils = {
   removeClassName: function (element, className) {
     // Check if the element has the class name
     // If yes, remove it
-    if (!DomUtils.containsClassName(element, className)) {
+    if (DomUtils.containsClassName(element, className)) {
       // Split the element className by using spaces as the delimiter
       // filter the resulting array of strings and make sure that we filter out any string equivalent to the className param
       // Finally, use the final array's reduce function to combine the remaining strings back into a single string
