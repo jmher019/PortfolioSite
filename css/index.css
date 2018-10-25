@@ -1,17 +1,28 @@
 html,
 body {
-  height: 100%;
   background-image: linear-gradient(#222, #333);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
 }
 
 .nav-bar {
   box-sizing: border-box;
-  width: 100%;
+  width: 96%;
   height: 40px;
   border: 2px solid #555;
   border-radius: 10px;
   background-image: linear-gradient(#222, #111);
   padding-top: 8px;
+  position: fixed;
+  top: 10px;
+  margin-left: 2%;
 }
 
 .nav-item-container {
@@ -49,6 +60,8 @@ body {
   border-right: 2px solid #555;
   border-left: 2px solid #555;
   background-image: linear-gradient(#222, #111);
+  overflow: hidden;
+  transition: height 0.25s ease-out;
 }
 
 .menu-item {
@@ -62,4 +75,42 @@ body {
 .menu-item:hover {
   color: white;
   cursor: pointer;
+}
+
+.section-container {
+  box-sizing: border-box;
+  width: 96%;
+  border: 2px solid #555;
+  border-radius: 10px;
+  background-image: linear-gradient(#222, #111);
+  margin-top: 80px;
+  margin-left: 2%;
+}
+
+.about-me-container {
+  width: 100%;
+  height: 100%;
+}
+
+.about-me-image-container {
+  width: 50%;
+  display: inline-block;
+}
+
+.about-me-description-container {
+  box-sizing: border-box;
+  width: 50%;
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.about-me-full-name {
+  color: #2cbab3;
+  text-align: center;
+}
+
+.about-me-job-title,
+.about-me-description {
+  color: #aaa;
+  text-align: center;
 }

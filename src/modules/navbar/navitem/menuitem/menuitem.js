@@ -16,7 +16,11 @@ var MenuItem = function (navItem, label, options) {
   };
 
   this.getWidth = function () {
-    return this.options.width;
+    return this.menuItemElement.clientWidth;
+  };
+
+  this.getHeight = function () {
+    return this.menuItemElement.clientHeight;
   };
 
   this.initialize();
